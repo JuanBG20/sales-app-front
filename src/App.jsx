@@ -42,7 +42,7 @@ export default function App() {
   const handleEMOpen = () => setEMOpen(true);
 
   const fetchSales = () => {
-    fetch("http://localhost:8080/sales")
+    fetch(`${process.env.REACT_APP_BACK_URL}/sales`)
       .then((res) => res.json())
       .then(({ sales }) => setSales(sales));
   };

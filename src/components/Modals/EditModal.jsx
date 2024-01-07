@@ -45,7 +45,7 @@ export default function EditModal({
       modifiedSale.uPrice * modifiedSale.quantity;
     setTotal(newTotal);
 
-    fetch(`http://localhost:8080/sales/${mSale._id}`, {
+    fetch(`${process.env.REACT_APP_BACK_URL}/sales/${mSale._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -31,7 +31,7 @@ export default function NewModal({ sales, setSales, nmOpen, setNMOpen }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/sales", {
+    fetch(`${process.env.REACT_APP_BACK_URL}/sales`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -15,7 +15,9 @@ export default function DeleteModal({
     const newSalesArray = sales.filter((sale) => sale._id !== id);
     setSales(newSalesArray);
 
-    fetch(`http://localhost:8080/sales/${id}`, { method: "DELETE" });
+    fetch(`${process.env.REACT_APP_BACK_URL}/sales/${id}`, {
+      method: "DELETE",
+    });
 
     handleDMClose();
   };
